@@ -17,14 +17,15 @@ const HomeScreen = ({ navigation }) => {
             />
             <Button onPress={() => navigation.navigate('Colors')} title='Go to colors' />
             <Button onPress={() => navigation.navigate('Square')} title='Go to square' />
+            <Button onPress={() => navigation.navigate('Text')} title='Go to text' />
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     text: {
-        fontSize: 30
-    }
+        fontSize: 30,
+    },
 });
 
 export default HomeScreen;

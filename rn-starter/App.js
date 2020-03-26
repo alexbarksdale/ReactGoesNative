@@ -7,6 +7,7 @@ import ImageScreen from './src/screens/ImageScreen';
 import CounterScreen from './src/screens/CounterScreen';
 import ColorScreen from './src/screens/ColorScreen';
 import SquareScreen from './src/screens/SquareScreen';
+import TextScreen from './src/screens/TextScreen';
 
 const navigator = createStackNavigator(
     {
@@ -16,15 +17,15 @@ const navigator = createStackNavigator(
         Image: ImageScreen,
         Colors: ColorScreen,
         Counter: CounterScreen,
-        Square: SquareScreen
+        Square: SquareScreen,
+        Text: TextScreen,
     },
     {
         initialRouteName: 'Home',
         defaultNavigationOptions: {
-            title: 'App'
-        }
+            title: 'App',
+        },
     }
 );
 
 export default createAppContainer(navigator);
-
