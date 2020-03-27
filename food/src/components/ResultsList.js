@@ -4,6 +4,10 @@ import { withNavigation } from 'react-navigation';
 import ResultsDetails from './ResultsDetails';
 
 function ResultsList({ title, results, navigation }) {
+    if (!results.length) {
+        return null;
+    }
+
     return (
         <View>
             <Text style={styles.title}>{title}</Text>
@@ -15,7 +19,11 @@ function ResultsList({ title, results, navigation }) {
                 renderItem={({ item }) => {
                     return (
                         <TouchableOpacity
-                            onPress={() => navigation.navigate('ResultsShow')}
+                            onPress={() =>
+                                navigation.navigate('ResultsShow', {
+                                    id: item.id, // Passes information to ResultsShowScreen
+                                })
+                            }
                         >
                             <ResultsDetails result={item} />
                         </TouchableOpacity>
