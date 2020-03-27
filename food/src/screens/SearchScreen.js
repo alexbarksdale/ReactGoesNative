@@ -16,20 +16,19 @@ function SearchScreen() {
     };
 
     return (
-        <View style={{ flex: 1 }}>
+        <>
             <SearchBar
                 term={term}
                 onTermChange={setTerm}
                 onTermSubmit={() => searchAPI(term)}
             />
             {err ? <Text>{err}</Text> : null}
-            <Text>We have found {results.length} results</Text>
             <ScrollView>
                 <ResultsList results={filterResultsByPrice('$')} title='Cost Effective' />
                 <ResultsList results={filterResultsByPrice('$$')} title='Bit Pricier' />
                 <ResultsList results={filterResultsByPrice('$$$')} title='Big Bucks' />
             </ScrollView>
-        </View>
+        </>
     );
 }
 
